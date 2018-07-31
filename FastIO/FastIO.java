@@ -8,8 +8,8 @@ public class FastIO {
 	public static final int DEFAULT_BUFFER_SIZE = 65536;
 	public static final int DEFAULT_INTEGER_SIZE = 10;
 	public static final int DEFAULT_LONG_SIZE = 19;
-	public static final int DEFAULT_WORD_SIZE = 32;
-	public static final int DEFAULT_LINE_SIZE = 256;
+	public static final int DEFAULT_WORD_SIZE = 256;
+	public static final int DEFAULT_LINE_SIZE = 1024;
 	public static final int EOF = -1;
 
 	private final InputStream in;
