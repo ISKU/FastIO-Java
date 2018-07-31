@@ -46,7 +46,11 @@ public class FastIO {
 	}
 
 	public char nextChar() {
-		return (char) read();
+		byte b;
+		while (isSpace(b = read()))
+			;
+
+		return (char) b;
 	}
 
 	public String next() {
