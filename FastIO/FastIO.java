@@ -311,6 +311,36 @@ public class FastIO {
 			write((byte) sd.charAt(i));
 	}
 
+	public void printls(char c) {
+		print(c);
+		write((byte) ' ');
+	}
+
+	public void printls(String s) {
+		print(s);
+		write((byte) ' ');
+	}
+
+	public void printls(int i) {
+		print(i);
+		write((byte) ' ');
+	}
+
+	public void printls(long l) {
+		print(l);
+		write((byte) ' ');
+	}
+
+	public void printls(float f) {
+		print(f);
+		write((byte) ' ');
+	}
+
+	public void printls(double d) {
+		print(d);
+		write((byte) ' ');
+	}
+
 	public void println(char c) {
 		print(c);
 		write((byte) '\n');
