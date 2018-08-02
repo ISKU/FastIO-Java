@@ -186,6 +186,21 @@ public class FastIO {
 		return negative ? -result : result;
 	}
 
+	public char[] nextToCharArray() {
+		byte b;
+		while (isSpace(b = read()))
+			;
+
+		int pos = 0;
+		do {
+			charBuffer[pos++] = (char) b;
+		} while (!isSpace(b = read()));
+
+		char[] array = new char[pos];
+		System.arraycopy(charBuffer, 0, array, 0, pos);
+		return array;
+	}
+
 	public int[] nextIntArray(int size) {
 		int[] array = new int[size];
 		for (int i = 0; i < size; i++)
