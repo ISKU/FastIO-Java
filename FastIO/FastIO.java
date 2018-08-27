@@ -356,6 +356,10 @@ public class FastIO {
 		write((byte) ' ');
 	}
 
+	public void printls() {
+		write((byte) ' ');
+	}
+
 	public void println(char c) {
 		print(c);
 		write((byte) '\n');
@@ -383,6 +387,10 @@ public class FastIO {
 
 	public void println(double d) {
 		print(d);
+		write((byte) '\n');
+	}
+
+	public void println() {
 		write((byte) '\n');
 	}
 
