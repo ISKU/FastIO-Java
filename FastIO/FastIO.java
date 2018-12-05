@@ -470,13 +470,13 @@ public class FastIO {
 	}
 
 	public void flush() {
-		if (nextOut == 0)
-			return;
-
 		flushBuffer();
 	}
 
 	private void flushBuffer() {
+		if (nextOut == 0)
+			return;
+
 		try {
 			out.write(outBuffer, 0, nextOut);
 		} catch (Exception e) {
