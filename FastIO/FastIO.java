@@ -1,4 +1,5 @@
 import java.io.*;
+import java.math.*;
 
 /**
  * @author Minho Kim <minho.kim093@gmail.com>
@@ -184,6 +185,14 @@ public class FastIO {
 		}
 
 		return negative ? -result : result;
+	}
+
+	public BigInteger nextBigInteger() {
+		return new BigInteger(next());
+	}
+
+	public BigDecimal nextBigDecimal() {
+		return new BigDecimal(next());
 	}
 
 	public char[] nextToCharArray() {
