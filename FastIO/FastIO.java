@@ -239,6 +239,19 @@ public class FastIO {
 		write((byte) c);
 	}
 
+	public void print(char[] chars) {
+		print(chars, 0, chars.length);
+	}
+
+	public void print(char[] chars, int start) {
+		print(chars, start, chars.length);
+	}
+
+	public void print(char[] chars, int start, int end) {
+		for (int i = start; i < end; i++)
+			write((byte) chars[i]);
+	}
+
 	public void print(String s) {
 		for (int i = 0; i < s.length(); i++)
 			write((byte) s.charAt(i));
@@ -371,6 +384,11 @@ public class FastIO {
 
 	public void println(char c) {
 		print(c);
+		write((byte) '\n');
+	}
+
+	public void println(char[] chars) {
+		print(chars, 0, chars.length);
 		write((byte) '\n');
 	}
 
