@@ -10,7 +10,7 @@ public class FastIO {
 	public static final int DEFAULT_INTEGER_SIZE = 11;
 	public static final int DEFAULT_LONG_SIZE = 20;
 	public static final int DEFAULT_WORD_SIZE = 256;
-	public static final int DEFAULT_LINE_SIZE = 1024;
+	public static final int DEFAULT_LINE_SIZE = 8192;
 	public static final int EOF = -1;
 
 	private final InputStream in;
@@ -62,6 +62,7 @@ public class FastIO {
 		int pos = 0;
 		do {
 			charBuffer[pos++] = (char) b;
+			ensureCapacity(pos);
 		} while (!isSpace(b = read()));
 
 		return new String(charBuffer, 0, pos);
@@ -71,8 +72,10 @@ public class FastIO {
 		byte b;
 		int pos = 0;
 
-		while (!isLine(b = read()))
+		while (!isLine(b = read())) {
 			charBuffer[pos++] = (char) b;
+			ensureCapacity(pos);
+		}
 
 		return new String(charBuffer, 0, pos);
 	}
@@ -203,6 +206,7 @@ public class FastIO {
 		int pos = 0;
 		do {
 			charBuffer[pos++] = (char) b;
+			ensureCapacity(pos);
 		} while (!isSpace(b = read()));
 
 		char[] array = new char[pos];
@@ -506,6 +510,15 @@ public class FastIO {
 
 	public void close() {
 		flush();
+	}
+
+	private void ensureCapacity(int size) {
+		if (size < charBuffer.length)
+			return;
+
+		char[] array = new char[size * 2];
+		System.arraycopy(charBuffer, 0, array, 0, size);
+		charBuffer = array;
 	}
 
 	private boolean isDigit(byte b) {
