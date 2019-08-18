@@ -511,7 +511,47 @@ public class FastIO {
 	public void close() {
 		flush();
 	}
+	
+	public void exit(char c) {
+		fprint(c);
+		System.exit(0);
+	}
+	
+	public void exit(String s) {
+		fprint(s);
+		System.exit(0);
+	}
 
+	public void exit(int i) {
+		fprint(i);
+		System.exit(0);
+	}
+
+	public void exit(long l) {
+		fprint(l);
+		System.exit(0);
+	}
+
+	public void exit(float f) {
+		fprint(f);
+		System.exit(0);
+	}
+
+	public void exit(double d) {
+		fprint(d);
+		System.exit(0);
+	}
+
+	public void exit(String format, Object... args) {
+		fprintf(format, args);
+		System.exit(0);
+	}
+
+	public void exit() {
+		flushBuffer();
+		System.exit(0);
+	}
+	
 	private void ensureCapacity(int size) {
 		if (size < charBuffer.length)
 			return;
